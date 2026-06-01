@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Configuration des couleurs de votre équipe FENACI */
+@theme {
+  --color-fenaci-orange: #FF7F00;
+  --color-fenaci-green: #008000;
+}
