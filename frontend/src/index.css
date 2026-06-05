@@ -1,7 +1,186 @@
 @import "tailwindcss";
 
-/* Configuration des couleurs de votre équipe FENACI */
 @theme {
   --color-fenaci-orange: #FF7F00;
-  --color-fenaci-green: #008000;
+  --color-fenaci-green: #1a7a2e;
+  --color-fenaci-dark: #1a1a2e;
+  --color-fenaci-gold: #f0a500;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Tailwind v4 ajoute border-width sur tous les éléments — on remet à 0 */
+*, *::before, *::after {
+  border-width: 0;
+  border-style: solid;
+  border-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #1a1a2e;
+  background-color: #ffffff;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes countdown-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 70%, #1a7a2e 100%);
+}
+
+/* Card hover effect */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #FF7F00, #f0a500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section divider */
+.section-divider {
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #FF7F00, #f0a500);
+  border-radius: 2px;
+  margin: 0 auto 1.5rem;
+}
+
+/* Pole card */
+.pole-card {
+  background: linear-gradient(135deg, #fff 0%, #f8f9ff 100%);
+  border: 1px solid #e8eaf6;
+  transition: all 0.3s ease;
+}
+
+.pole-card:hover {
+  background: linear-gradient(135deg, #FF7F00, #f0a500);
+  border-color: transparent;
+  color: white;
+}
+
+.pole-card:hover .pole-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* Countdown box */
+.countdown-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: countdown-pulse 2s ease-in-out infinite;
+}
+
+/* Navbar */
+.navbar-scrolled {
+  background: rgba(26, 26, 46, 0.95) !important;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Hero orange FENACI — motif africain */
+.hero-fenaci {
+  background-color: #E8420A;
+}
+
+/* Sidebar liens rapides */
+.sidebar-link {
+  display: block;
+  padding: 12px 16px;
+  color: white;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  transition: background 0.2s;
+  text-align: center;
+}
+
+.sidebar-link:hover {
+  background: rgba(0,0,0,0.15);
+}
+
+/* Reset border Tailwind v4 sur les liens navbar */
+a.navbar-link,
+a.navbar-mobile-link,
+a.navbar-logo-inner {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  text-decoration: none !important;
+}
+
+a.navbar-link {
+  border-bottom: 3px solid transparent !important;
+}
+
+a.navbar-link.active {
+  border-bottom: 3px solid #E8420A !important;
+}
+
+@media (min-width: 768px) {
+  .hidden-mobile { display: flex !important; }
+  .show-mobile   { display: none !important; }
+}
+@media (max-width: 767px) {
+  .hidden-mobile { display: none !important; }
+  .show-mobile   { display: flex !important; }
 }

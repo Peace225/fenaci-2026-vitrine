@@ -1,0 +1,228 @@
+.navbar-header {
+  background-color: white;
+}
+
+/* ── Zone logo ── */
+.navbar-logo-zone {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px 28px;
+  background-color: white;
+}
+
+.navbar-logo-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+/* ── Cercle bicolore ── */
+.navbar-circle {
+  position: relative;
+  width: 190px;
+  height: 190px;
+  flex-shrink: 0;
+  background-color: white;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+/* Cercle orange = fond transparent + border orange seulement */
+.navbar-circle-orange {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 11px solid #E8420A;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* Arc vert = superposé, masqué sauf bas-droit */
+.navbar-circle-green {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 11px solid #1a7a2e;
+  background: transparent;
+  box-sizing: border-box;
+  clip-path: polygon(52% 52%, 100% 52%, 100% 100%, 52% 100%);
+}
+
+/* Texte FENACI centré dans le cercle — sur une seule ligne */
+.navbar-circle-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-circle-fen {
+  color: #E8420A;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1;
+  font-family: Inter, 'Arial Black', sans-serif;
+  letter-spacing: -1px;
+}
+
+.navbar-circle-aci {
+  color: #1a7a2e;
+  font-weight: 900;
+  font-size: 28px;
+  line-height: 1;
+  font-family: Inter, 'Arial Black', sans-serif;
+  letter-spacing: -1px;
+}
+
+/* ── Texte 2026 ── */
+.navbar-year-block {
+  padding-bottom: 6px;
+}
+
+.navbar-edition {
+  color: #bbb;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 4px;
+}
+
+.navbar-year {
+  color: #E8420A;
+  font-weight: 900;
+  font-size: 96px;
+  line-height: 1;
+  font-family: Inter, 'Arial Black', sans-serif;
+}
+
+/* ── Sous-titre ── */
+.navbar-subtitle {
+  color: #bbb;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  text-align: center;
+  margin: 0;
+}
+
+/* ── Barre de navigation ── */
+.navbar-nav {
+  border-top: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: white;
+}
+
+.navbar-nav-desktop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+}
+
+.navbar-link {
+  padding: 18px 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  text-decoration: none;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  box-shadow: none;
+  transition: color 0.2s;
+  display: inline-block;
+  background: none;
+}
+
+.navbar-link:hover {
+  color: #E8420A;
+}
+
+.navbar-link.active {
+  color: #E8420A;
+  border-bottom-color: #E8420A;
+}
+
+.navbar-flag {
+  border-left: 1px solid #e5e7eb;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #777;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* ── Mobile ── */
+.navbar-nav-mobile {
+  display: none;
+}
+
+.navbar-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+}
+
+.navbar-mobile-links {
+  border-top: 1px solid #f0f0f0;
+}
+
+.navbar-mobile-link {
+  display: block;
+  padding: 12px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  border-bottom: 1px solid #f0f0f0;
+  color: #555;
+}
+
+.navbar-mobile-link.active {
+  color: #E8420A;
+  background-color: #fff5f0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .navbar-nav-desktop { display: none !important; }
+  .navbar-nav-mobile  { display: block !important; }
+  .navbar-year        { font-size: 60px; }
+  .navbar-circle      { width: 130px; height: 130px; }
+  .navbar-circle-fen,
+  .navbar-circle-aci  { font-size: 30px; }
+}
